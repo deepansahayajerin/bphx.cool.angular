@@ -1,0 +1,73 @@
+:root
+{
+  --critical-url: url("/assets/images/critical.png");
+  --exclamation-url: url("/assets/images/exclamation.png");
+  --information-url: url("/assets/images/information.png");
+  --question-url: url("/assets/images/question.png");
+}
+
+.cool-message-box
+{
+  position: fixed;
+  z-index: 11000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.cool-message-box .message-text
+{
+  flex-grow: 1;
+  align-self: center;
+  white-space: pre-line;
+  overflow-wrap: normal;
+  word-break: break-word;
+  user-select: text;
+}
+
+.cool-message-box .message-icon
+{
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  margin-right: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.cool-message-box .message-button
+{
+  margin: 0 4px;
+}
+
+.cool-message-box .message-icon.None
+{
+  display: none;
+}
+
+.cool-message-box .message-icon.Critical
+{
+  background-image: var(--critical-url);
+}
+
+.cool-message-box .message-icon.Exclamation
+{
+  background-image: var(--exclamation-url);
+}
+
+.cool-message-box .message-icon.Information
+{
+  background-image: var(--information-url);
+}
+
+.cool-message-box .message-icon.Question
+{
+  background-image: var(--question-url);
+}

@@ -1,0 +1,41 @@
+<cool-popup class="coolActive" [resizable]="true" [draggable]="true">
+  <header>
+    <span class="appIcon"></span>
+    <span class="appTitle">Error</span>
+    <span class="popupIcons"><b title="Close" coolCloseButton (click)="onDone('Close')"></b></span>
+  </header>
+  <content style="padding: 8px" coolTabScope (keydown)="keydown($event)">
+    <div style="flex-grow: 1; display: flex">
+      <div class="error-icon"></div>
+        <div style="flex-grow: 1; display: flex; flex-direction: column">
+          <table border="0" style="align-self: baseline">
+            <tr *ngIf="id">
+              <th>Error ID:</th>
+              <td><div class="id">{{id}}</div></td>
+            </tr>
+            <tr *ngIf="message">
+              <th>Message:</th>
+              <td><div class="message">{{message}}</div></td>
+            </tr>
+            <tr *ngIf="type">
+              <th>Type:</th>
+              <td><div class="type">{{type}}</div></td>
+            </tr>
+            <tr *ngIf="details">
+              <th>Details:</th>
+              <td><div class="details">{{details}}</div></td>
+            </tr>
+            <tr *ngIf="stackTrace">
+              <th colspan="2">Stack trace:</th>
+            </tr>
+          </table>
+	        <textarea *ngIf="stackTrace" readonly
+            style="font-family: monospace; flex-grow: 1; white-space: pre">{{stackTrace}}</textarea>
+      </div>
+    </div>
+    <div style="text-align: right; padding-top: 8px">
+      <button button-name="Close" (click)="onDone('Close')">Close</button>
+    </div>
+  </content>
+</cool-popup>
+

@@ -1,0 +1,46 @@
+<table class="coolFlexHead" *ngIf="control.fixedRows > 0">
+  <colgroup>
+    <ng-container *ngFor="let col of control.cols">
+      <col *ngIf="!col?.hidden" [style.width.px]="col?.width / 15"/>
+    </ng-container>
+  </colgroup>
+  <tr *ngFor="let row of control.rows|slice:0:control.fixedRows; index as r; trackBy: index"
+    [attr.row]="r">
+    <ng-container *ngFor="let cell of row?.cells; index as c; trackBy: index">
+      <td *ngIf="!control.cols[c]?.hidden"
+        [attr.col]="c"
+        [class.coolFlexFixedCol]="control.fixedCols > c">{{cell?.value}}</td>
+    </ng-container>
+  </tr>
+</table>
+<table class="coolFlexBody"
+  [attr.coolFlexHighlight]="control.highLight"
+  [attr.coolFlexSelectionMode]="control.selectionMode">
+  <colgroup>
+    <ng-container *ngFor="let col of control.cols">
+      <col *ngIf="!col?.hidden" [style.width.px]="col?.width / 15"/>
+    </ng-container>
+  </colgroup>
+  <ng-container *ngFor="let row of control.rows; index as r; trackBy: index">
+    <tr *ngIf="r >= control.fixedRows"
+      [attr.row]="r"
+      [class.coolFlexSelectedRow]="isRowSelected(row, r)"
+      [class.coolFlexFocusedRow]="r === control.mouseRow">
+      <ng-container *ngFor="let cell of row?.cells; index as c; trackBy: index">
+      <td *ngIf="!control.cols[c]?.hidden"
+        [attr.col]="c"
+        [class.coolFlexFixedCol]="control.fixedCols > c"
+        [class.coolFlexEditing]="r === control.editRow && c === control.editCol"
+        [class.coolFlexSelectedCol]="isCellSelected(row, r, c)"
+        [class.coolFlexFocusedCol]="r === control.mouseRow && c === control.mouseCol">
+        <ng-container *ngIf="isCellFocused(r, c); else text">
+          <input [value]="cell.value" #editor (change)="onEdited($event, cell, r, c)"
+            [tabindex]="field.tabindex"
+            [readonly]="processing">
+        </ng-container>
+        <ng-template #text>{{cell?.value}}</ng-template>
+      </td>
+      </ng-container>
+  </tr>
+  </ng-container>
+</table>

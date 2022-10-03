@@ -1,0 +1,20 @@
+<div class="cool-upload-box">
+<input class="cool-upload-input" type="file" [multiple]="multiple" [accept]="accept" #input 
+(change)="change($event)"/>
+<cool-popup class="coolActive" [resizable]="true" [draggable]="true">
+  <header>
+    <span class="appIcon"></span>
+    <span class="appTitle">{{title?? "File upload"}}</span>
+    <span class="popupIcons"><b title="Close" coolCloseButton (click)="complete()"></b></span>
+  </header>
+  <content coolTabScope tabindex="1" class="cool-upload-area" #content
+    (dragover)="drag($event)" (dragenter)="drag($event)" 
+    (dragleave)="drag($event)" (dragend)="drag($event)" 
+    (drop)="drop($event)" (click)="input.click()">
+    <div class="cool-upload-icon">📥</div>
+    <a class="cool-upload-text">{{text ?? "Choose a file, drag and drop or copy it here."}}</a>
+  </content>
+</cool-popup>
+</div>
+
+    

@@ -1,0 +1,14 @@
+<div class="resizeCorner" *ngIf="resizable">
+  <div class="left-top-corner"></div>
+  <div class="left-bottom-corner"></div>
+  <div class="right-top-corner"></div>
+  <div class="right-bottom-corner"></div>
+</div>
+<div class="resizeBar" *ngIf="resizable">
+  <div class="top-bar"></div>
+  <div class="right-bar"></div>
+  <div class="bottom-bar"></div>
+  <div class="left-bar"></div>
+</div>
+<ng-content select="header"></ng-content>
+<ng-content select="content"></ng-content>

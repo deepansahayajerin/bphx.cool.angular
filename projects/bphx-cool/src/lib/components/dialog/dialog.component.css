@@ -1,0 +1,769 @@
+.NOTSUPPORTED
+{
+  display: none;
+}
+
+[coolType]:not([coolType=DLGBOX]):not([coolType=WINPRIME]):not([coolType=WINREUS]):not([coolType=WINSEC]):not([coolType=WINTMP]),
+[coolBody],
+[coolPrompt],
+[coolFor],
+.coolPrompt,
+[coolHorizontalScroll] > [coolHeader]
+{
+  position: absolute;
+  box-sizing: border-box;
+}
+
+[coolType=SCREEN]
+{
+  display: flex;
+  position: relative !important;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+[coolType=prompt]:not([hidden]), 
+[coolType=field]:not([hidden]), 
+[coolPrompt]:not([hidden])
+{
+  display: flex;
+  align-items: center;
+  font-size: inherit;
+}
+
+.coolPopup.online [coolType=prompt],
+.coolPopup.online [coolType=literal],
+.coolPopup.online [coolType=field]
+{
+  color: white;
+}
+
+.coolPopup.online [coolType=prompt],
+.coolPopup.online [coolType=literal],
+.coolPopup.online [coolType=field]:not(textarea)
+{
+  white-space: pre;
+  align-items: flex-start;
+  letter-spacing: 1px;
+}
+
+[coolHeader] [coolPrompt]
+{
+  align-items: flex-end;
+}
+
+[coolType=DLGBOX], [coolType=WINPRIME], [coolType=WINREUS], [coolType=WINSEC], [coolType=WINTMP]
+{
+  position: relative;
+  box-sizing: border-box;
+}
+
+[coolcommands]
+{
+  flex-shrink: 0;
+  padding: .25em 1em;
+}
+
+[coolcommands] [cooltype]
+{
+  position: static !important;
+}
+
+[coolUpper]
+{
+  text-transform: uppercase;
+}
+
+[coolLower]
+{
+  text-transform: lowercase;
+}
+
+[coolShow=false]
+{
+  display: none;
+}
+
+input[coolType], select[coolType]
+{
+  min-height: calc(1em + 6px);
+}
+
+select[coolType]
+{
+  white-space: nowrap;
+}
+
+input[coolType].ng-invalid
+{
+  border: solid 1px red!important;
+}
+
+[coolType=TAB]
+{
+  position: static;
+  width: 100%;
+  height: 100%;
+}
+
+[coolType=WNGROUP], [coolType=WNGROUP]>fieldset
+{
+  pointer-events: none !important;
+}
+
+[coolType=WNGROUP]>fieldset>*
+{
+  pointer-events: auto;
+}
+
+[coolType=WNGROUP]>fieldset
+{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+[coolType=WNGROUP]>fieldset>legend:empty
+{
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+[coolType=WNGROUP]>fieldset>legend:empty:after
+{
+  content: '\200b';
+}
+
+[coolType=WNGROUP]>fieldset
+{
+  min-width: 100%;
+  padding-left: .25em;
+  padding-right: .25em;
+}
+
+[coolType=WNGROUP]>fieldset>legend
+{
+	white-space: nowrap;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+[coolBody],
+[coolType],
+[coolPrompt],
+[coolFor],
+.coolPrompt,
+[coolHorizontalScroll] > [coolHeader]
+{
+  overflow: hidden;
+}
+
+[coolType=WNGROUP]
+{
+  overflow: visible;
+}
+
+textarea[coolType]
+{
+	overflow: auto;
+}
+
+[coolHeader]
+{
+  overflow: visible;
+}
+
+[coolPrompt]>[coolType],
+[coolFor]>[coolType]
+.coolPrompt>[coolType]
+{
+  position: static;
+}
+
+[coolType=PUSHBTN]
+{
+	white-space: pre;
+}
+
+.nowrap
+{
+  white-space: pre ! important;
+}
+
+[coolType=STNDLST]
+{
+  border: thin inset;
+  background-color: window;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* scroll-snap-type: y mandatory; */
+}
+
+/* [coolType=STNDLST] tr
+{
+  scroll-snap-align: start;
+} */
+
+
+[coolHorizontalScroll] [coolType=STNDLST]
+{
+  overflow-x: auto !important;
+}
+
+[coolType=STNDLST] table
+{
+  border: none;
+  table-layout: fixed;
+  margin-left: -1px;
+  font-size: inherit;
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+}
+
+[coolType=STNDLST] table td
+{
+  white-space: pre;
+  overflow: hidden;
+  min-height: 1em;
+  box-sizing: content-box;
+  vertical-align: top;
+  cursor: default;
+}
+
+[coolType=STNDLST] table col
+{
+  border-left: solid 0 transparent;
+}
+
+[coolBody] table
+{
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+[coolBody] td
+{
+  padding: 0;
+}
+
+[coolBody] td:empty:after
+{
+  content: "\200b";
+}
+
+[coolMessageType=none],
+[coolMessageType=info]
+{
+  color: whitesmoke;
+  white-space: normal;
+  list-style: none;
+}
+
+[coolMessageType=warning]
+{
+  color: yellow;
+  white-space: normal;
+  list-style: none;
+}
+
+[coolMessageType=error]
+{
+  color: red;
+  white-space: normal;
+  list-style: none;
+}
+
+input[coolType]:disabled:not(:read-only),
+button[coolType]:disabled *,
+label[coolType][disabled],
+a[coolType][disabled],
+[coolType][coolColor=disabled]:not(:read-only):not(button)
+{
+  filter: grayscale(1);
+}
+
+.coolHidden
+{
+  display: none !important;
+}
+
+[coolType=STATSBAR]
+{
+  background-color: transparent!important;
+  z-index: 3;
+  border: 1px inset;
+}
+
+[coolType=TOOLBAR]
+{
+  background-color: #e4e4e4;
+  z-index: 3;
+}
+
+li[coolType=MENUITEM][disabled]
+{
+  opacity: .5;
+}
+
+li[coolType=MENUITEM] > a,
+li[coolType=MENUITEM] > a:hover,
+li[coolType=MENUITEM] > a:visited
+{
+  color: inherit;
+  text-decoration: none;
+}
+
+[coolType] input[type=file].file-upload
+{
+	display: none;
+}
+
+.coolDialog .invisible
+{
+  display: none;
+}
+
+[coolType=WNGROUP]>fieldset .invisible
+{
+	display: inherit;
+	visibility: visible;
+}
+
+[coolType=WNGROUP].invisible>fieldset
+{
+  border: none;
+}
+
+[coolType=WNGROUP].invisible>fieldset>legend
+{
+  display: none;
+}
+
+input.nomargin
+{
+  border: 0;
+}
+
+input.nomargin:focus
+{
+	outline: none;
+}
+
+[coolError]:not([coolColor=red])
+{
+  background: red!important;
+}
+
+[coolColor=white]
+{
+  color: white;
+}
+
+[coolColor=yellow]
+{
+  color: #ff0!important;
+}
+
+[coolColor=green]
+{
+  color: #0f0!important;
+}
+
+[coolColor=purple]
+{
+  color: #f0f!important;
+}
+
+[coolColor=cyan]
+{
+  color: #0ff!important;
+}
+
+[coolColor=red]
+{
+  color: red!important;
+}
+
+[coolColor=blue]
+{
+  color: #00f!important;
+}
+
+[coolColor=white][coolHighlight=reverseVideo],
+[coolHighlight=reverseVideo]:not([coolColor])
+{
+  color: black!important;
+  background: white!important;
+}
+
+[coolType=STNDLST]:not([coolBackground]) [coolHighlight=reverseVideo]:not([coolColor])
+{
+  color: white!important;
+  background: black!important;
+}
+
+[coolColor=yellow][coolHighlight=reverseVideo]
+{
+  color: black!important;
+  background: yellow!important;
+}
+
+[coolColor=green][coolHighlight=reverseVideo]
+{
+  color: white!important;
+  background: #0f0!important;
+}
+
+[coolColor=purple][coolHighlight=reverseVideo]
+{
+  color: white!important;
+  background: #f0f!important;
+}
+
+[coolColor=cyan][coolHighlight=reverseVideo]
+{
+  color: white!important;
+  background: cyan!important;
+}
+
+[coolColor=red][coolHighlight=reverseVideo]
+{
+  color: white!important;
+  background: #f00!important;
+}
+
+[coolColor=blue][coolHighlight=reverseVideo]
+{
+  color: white!important;
+  background: #00f!important;
+}
+
+[coolType=STNDLST] tr td
+{
+  user-select: none;
+}
+
+[coolType=STNDLST]:focus tr.coolFocused
+{
+  outline: thin dotted;
+}
+
+[coolType=STNDLST] tr[selected=true],
+[coolType=STNDLST] tr.selected
+{
+  background-color: highlight !important;
+}
+
+[coolType=STNDLST] tr[selected=true] td:not([coolIntensity=dark]),
+[coolType=STNDLST] tr.selected td:not([coolIntensity=dark])
+{
+  background-color: highlight !important;
+  color: highlighttext !important;
+}
+
+[coolIntensity=dark]:not([coolType=RDBTNOC]):not([coolType=CHKBOX]):not(coolType=SNGLNFLD)
+{
+  color: transparent!important;
+}
+
+[coolType=PUSHBTN]
+{
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+label[coolType] > input[type=radio],
+label[coolType] > input[type=checkbox]
+{
+  margin: 0;
+}
+
+label[coolType] > input[type=radio]:focus,
+label[coolType] > input[type=checkbox]:focus
+{
+  outline: none;
+}
+
+label[coolType=RDBTNOC]:not(.invisible), label[coolType=CHKBOX]:not(.invisible)
+{
+  display: flex;
+  align-items: center;
+  min-height: 20px;
+}
+
+label[coolType=RDBTNOC] > span,
+label[coolType=CHKBOX] > span
+{
+  margin: 0;
+  padding: 0 2px;
+  vertical-align: top;
+  white-space: pre;
+}
+
+label[coolType=RDBTNOC].coolFocused > span,
+label[coolType=CHKBOX].coolFocused > span
+{
+  outline: thin dotted;
+  outline-offset: -2px;
+  background-color: inherit;
+}
+
+[coolType=STATSBAR]
+{
+  background-color: #eee;
+  color: black;
+  top: auto !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  z-index: 2;
+}
+
+[coolType=error-message]
+{
+  display: flex;
+  align-items: center;
+}
+
+[coolMenu]
+{
+  flex-shrink: 0;
+}
+
+[coolMenu] [coolType=MENUITEM] {position: relative!important; }
+[coolType=MENUITEM] { overflow: visible;}
+[coolType=MENUITEM] > a { white-space: pre;}
+
+[coolMenu]>[coolType=MENUITEM]>a>.accesskey
+{
+  display: none;
+}
+
+[coolType=MENUITEM] > hr
+{
+  margin: auto 2px;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: thin groove;
+  height: 0;
+}
+
+
+ul[coolMenu] {width:100%;position:relative;z-index:597;float:left; white-space: nowrap;}
+ul[coolMenu] ul { border:solid  1px #d9d9d9; }
+ul[coolMenu],
+ul[coolMenu] li,
+ul[coolMenu] ul{list-style:none;margin:0;padding:0; outline: none}
+ul[coolMenu] li{float:left;min-height:1px;line-height:1.3em;vertical-align:middle}
+
+ul[coolMenu], ul[coolMenu] ul
+{
+  background-color:#f6f6f6;
+}
+
+ul[coolMenu] ul
+{
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  z-index:598;
+  width:100%;
+  box-shadow: 2px 2px 2px rgba(55, 50, 60, 0.34);
+}
+
+ul[coolMenu] ul li{float:none}
+
+ul[coolMenu] ul ul
+{
+  top:-3px;
+  left:99%;
+}
+
+ul[coolMenu] li.coolExpanded:not([disabled]) > ul
+{
+  display: block
+}
+
+[coolPopup]:not(.coolActive) li[coolType=MENUITEM] > a
+{
+  color: graytext;
+}
+
+ul[coolMenu]
+{
+	font-family: system-ui, sans-serif;
+  font-size: 12px;
+  background-color:#f6f6f6;
+}
+
+ul[coolMenu] li{padding:7px 10px;}
+
+ul[coolMenu] li.coolExpanded:not(.coolCollapsing):not([disabled]),
+ul[coolMenu] li.coolFocused:not([disabled])
+{
+  background-color:#eee;
+  color:#000
+}
+
+ul[coolMenu] a:link,
+ul[coolMenu] a:visited
+{
+  color:#000;
+  text-decoration:none;
+}
+
+ul[coolMenu] .coolFocused > a,
+ul[coolMenu] .coolExpanded:not(.coolCollapsing) > a
+{
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+ul[coolMenu] a:active
+{
+  color:orange;
+}
+
+ul[coolMenu] ul
+{
+  width: auto;
+}
+
+ul[coolMenu] > li[coolSubmenu] li[coolSubmenu] > a
+{
+  padding-right: 20px;
+  background-image:url("data:image/gif;base64,R0lGODlhDAAMAPcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAP8ALAAAAAAMAAwAAAgnAP8JHEiwoEGDAA4SBJBQ4T+GDQ9CjFhwIsWBExVCdMjQ4UOPHgMCADs=");
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+}
+
+ul[coolMenu] .submenu
+{
+  padding-right:20px;
+  background-image:url(data:image/gif;base64,R0lGODlhDAAMAPcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAP8ALAAAAAAMAAwAAAggAP8JHEiwoMGDCP8BWMiQIcGGDgtCRBiRYsKLGDNmDAgAOw==);
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+}
+
+ul[coolMenu] ul .submenu
+{
+  padding-right: 15px;
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+  background-image:url(data:image/gif;base64,R0lGODlhDAAMAPcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAP8ALAAAAAAMAAwAAAgmAP8JHEiwoMGCAA4SBJBQ4T+GDQ9CjIhwokSICjFmpGiQo8ODAQEAOw==);
+}
+
+ul[coolMenu] li > a
+{
+  padding: 2px 2px;
+  margin: 2px 2px;
+}
+
+ul[coolMenu] li
+{
+  padding:0;
+}
+
+ul[coolMenu] li.submenu
+{
+  padding: 7px 20px 7px 10px;
+}
+
+ul[coolMenu] ul li.submenu
+{
+  padding-right: 15px;
+}
+
+ul[coolMenu] a
+{
+  display: flex;
+}
+
+ul[coolMenu] a .accesskey
+{
+  flex-grow: 1;
+  text-align: right;
+  padding-left: 1em;
+}
+
+[coolType=PUSHBTN] .accesskey
+{
+  padding-left: 1em;
+}
+
+.coolDialog.pending [coolPopup] > content
+{
+  pointer-events: none;
+}
+
+pre[coolType]
+{
+  padding: 0;
+  border: none;
+  margin: 0;
+  color: inherit;
+  background: transparent;
+  white-space: pre-wrap;
+  overflow-wrap: normal;
+  word-break: break-word;
+  font-family: inherit;
+  line-height: inherit;
+}
+
+[coolType] u
+{
+  text-decoration: none;
+}
+
+.coolActive [coolType] u
+{
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-underline-position: under;
+}
+
+[coolAlign=right]
+{
+	text-align: right ! important;
+	justify-content: flex-end;
+}
+
+[coolAlign=left]
+{
+  text-align: left ! important;
+  justify-content: flex-start;
+}
+
+[coolAlign=center]
+{
+  text-align: center ! important;
+  justify-content: center;
+}
+
+input[type=text][coolType]:read-only:not([coolError]):not([coolColor]),
+[coolType][coolColor=readonly]:not([coolError])
+{
+	background-color: #CECFCE;
+}
+
+@media(-webkit-min-device-pixel-ratio:0)
+{
+  .coolDialog button:focus
+  {
+    outline-color: -webkit-focus-ring-color;
+    outline-style: solid;
+    outline-width: 1px;
+  }
+}
+
+button[coolType][coolDefault]:not(:focus):not(:disabled)
+{
+  outline: gray solid 1px;
+  outline-offset: 1px;
+}

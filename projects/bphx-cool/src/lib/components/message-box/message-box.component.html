@@ -1,0 +1,23 @@
+<div class="cool-message-box">
+<cool-popup class="coolActive" [resizable]="false" [draggable]="true">
+  <header>
+    <span class="appIcon"></span>
+    <span class="appTitle">{{title}}</span>
+    <span class="popupIcons"><b title="Close" coolCloseButton (click)="onDone('Close')"></b></span>
+  </header>
+  <content style="padding: 8px" coolTabScope (keydown)="keydown($event)">
+		<div style="display: flex">
+      <div class="message-icon" [ngClass]="style"></div>
+      <div class="message-text">{{text}}</div>
+		</div>
+    <div style="text-align: center; padding-top: 8px">
+      <button *ngFor="let button of buttons"
+        [attr.button-name]="button.name"
+        (click)="onDone(button.name)"
+        class="message-button"
+        [innerHTML]="button.text||button.name"></button>
+		</div>
+  </content>
+</cool-popup>
+</div>
+

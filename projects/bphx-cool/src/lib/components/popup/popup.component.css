@@ -1,0 +1,297 @@
+.coolPopup
+{
+  position:absolute;
+  padding: 0;
+  border : 1px solid lightgrey;
+  box-shadow: 0px 6px 11px 0px rgba(55, 50, 60, 0.34);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+
+  min-height: 30px;
+  overflow: hidden;
+
+  background-color: white;
+}
+
+.coolPopup > header
+{
+  cursor: default;
+
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: 1px solid lightgrey;
+  padding-right: 5px;
+  background-color: #777780;
+  color: white;
+
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.coolPopup.coolActive > header
+{
+  background-color: #000066;
+}
+
+.coolPopup.coolLocked > header
+{
+  background-color: #777780;
+}
+
+.coolPopup > header > *
+{
+  flex-shrink: 0;
+}
+
+.coolPopup.minimized
+{
+  width:100px!important;
+  height:10px!important;
+}
+
+.coolPopup.minimized > header
+{
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.coolPopup > content
+{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: visible;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.coolPopup.coolLocked > content
+{
+  pointer-events: none;
+  opacity: .9;
+}
+
+.coolPopup.coolModal.coolFixedSize [coolMinButton],
+.coolPopup.coolModal.coolFixedSize [coolMaxButton]
+{
+  display: none;
+}
+
+.coolPopup.coolFixedSize [coolMaxButton]
+{
+  color: graytext;
+}
+
+.coolPopup.coolFixedSize [coolMaxButton]:hover
+{
+  background: transparent;
+  color: graytext;
+}
+
+.coolPopup.minimized > content
+{
+  display: none;
+}
+
+.coolPopup > .resizeCorner > div
+{
+  opacity: 0;
+  width:15px;
+  height:15px;
+  position: absolute;
+}
+
+.coolPopup > .resizeCorner > .left-top-corner
+{
+  float:left;
+  top: -5px;
+  left: -5px;
+}
+
+.coolPopup:not(.maximized):not(.minimized) > .resizeCorner > .left-top-corner,
+.coolPopup:not(.maximized):not(.minimized) > .resizeCorner > .right-bottom-corner
+{
+  cursor: nwse-resize;
+}
+
+.coolPopup > .resizeCorner > .left-bottom-corner
+{
+  top: 98%;
+  left: -5px;
+}
+
+.coolPopup > .resizeCorner > .right-top-corner
+{
+  top: -5px;
+  right: -5px;
+}
+
+.coolPopup:not(.maximized):not(.minimized) > .resizeCorner > .left-bottom-corner,
+.coolPopup:not(.maximized):not(.minimized) > .resizeCorner > .right-top-corner
+{
+  cursor: nesw-resize;
+}
+
+.coolPopup > .resizeCorner > .right-bottom-corner
+{
+  bottom:-5px;
+  right: -5px;
+}
+
+.coolPopup > .resizeBar > div
+{
+  opacity: 0;
+  position:absolute;
+  background-color: red;
+}
+
+.coolPopup > .resizeBar > .top-bar
+{
+  width:96%;
+  height:6px;
+  top: -5px;
+  left:2%;
+}
+
+.coolPopup > .resizeBar > .bottom-bar
+{
+  width:96%;
+  height:6px;
+  top: 100%;
+  left:2%;
+}
+
+.coolPopup:not(.maximized):not(.minimized) > .resizeBar > .bottom-bar,
+.coolPopup:not(.maximized):not(.minimized) > .resizeBar > .top-bar
+{
+  cursor: ns-resize;
+}
+
+.coolPopup > .resizeBar > .right-bar
+{
+  width:6px;
+  height:96%;
+  top:5px;
+  left:100%;
+}
+
+.coolPopup > .resizeBar > .left-bar
+{
+  width:6px;
+  height:96%;
+  top:2%;
+  left: -5px;
+}
+
+.coolPopup:not(.maximized):not(.minimized) > .resizeBar > .right-bar,
+.coolPopup:not(.maximized):not(.minimized) > .resizeBar > .left-bar
+{
+  cursor: ew-resize;
+}
+
+.coolPopup.maximized:not(.minimized)
+{
+  position: absolute !important;
+  left: 0px !important;
+  top: 0px !important;
+  width: 100% !important;
+  height: 100% !important;
+
+  border-radius: 0px !important;
+
+  box-shadow: none !important;
+}
+
+.coolPopup.maximized:not(.minimized) > header
+{
+  border-radius: 0px !important;
+}
+
+.coolPopup.maximized:not(.minimized) > content
+{
+  border-radius: 0px !important;
+}
+
+.coolPopup > header .popupIcons
+{
+  font-family: monospace;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+.coolPopup > header .popupIcons
+{
+  color: white;
+}
+
+.coolPopup > header .popupIcons > *
+{
+  width: 16px;
+  height: 16px;
+  padding: 0 4px;
+}
+
+.coolPopup > header .popupIcons > *:hover
+{
+  background-color: #0000FF;
+  color: white;
+}
+
+.coolPopup > header .popupIcons > [coolCloseButton]:hover
+{
+  background-color: red;
+  color: white;
+}
+
+.coolPopup > header .popupIcons > [coolMinButton]:after
+{
+  content: "_";
+}
+
+.coolPopup > header .popupIcons > [coolMaxButton]:after
+{
+  content: "\25a1";
+}
+
+.coolPopup > header .popupIcons > [coolCloseButton]:after
+{
+  content: "\00d7";
+}
+
+.coolPopup > header .popupIcons > [coolHelpButton]:after
+{
+  content: "[?]";
+}
+
+.coolPopup > header .appIcon
+{
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+}
+
+.coolPopup > header .appButtons
+{
+  float: right;
+}
+
+.coolPopup > header > .appTitle
+{
+  flex-shrink: 1;
+  flex-grow: 1;
+
+  font-size: 12px;
+  color: white;
+  vertical-align: middle;
+  text-overflow: ellipsis;
+  text-align: center;
+  display: inline-block;
+  overflow: hidden;
+}
